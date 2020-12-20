@@ -17,7 +17,7 @@ class MathService : Service() {
 
         val intentResult = Intent()
         intentResult.action = BROADCAST_MATH_RESULT
-        intentResult.putExtra("math_result_to_receiver", result)
+        intentResult.putExtra("math_result_to_fragment", result)
         Log.d(TAG,"Service sending broadcast")
         sendBroadcast(intentResult)
 

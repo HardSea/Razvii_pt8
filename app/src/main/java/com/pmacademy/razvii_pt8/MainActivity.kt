@@ -1,7 +1,6 @@
 package com.pmacademy.razvii_pt8
 
 import android.content.Intent
-import android.content.IntentFilter
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
@@ -21,10 +20,6 @@ class MainActivity : AppCompatActivity() {
                 .add(R.id.LayoutFragment, MathResultFragment.newInstance())
                 .commit()
 
-        val intentFilter = IntentFilter()
-        intentFilter.addAction(BROADCAST_MATH_RESULT)
-        applicationContext.registerReceiver(MathBroadcastReceiver(), intentFilter)
-
         val startTextView = findViewById<TextView>(R.id.StartTextViewFragment)
         startTextView.setOnClickListener {
             Log.d(TAG, "TextView clicked")
@@ -32,5 +27,4 @@ class MainActivity : AppCompatActivity() {
             startService(serviceIntent)
         }
     }
-
 }

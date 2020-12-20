@@ -20,7 +20,7 @@ class MathResultFragment : Fragment(R.layout.mathresult_fragment) {
         Log.d(TAG, "onCreateView in Fragment")
 
         val filter = IntentFilter()
-        filter.addAction("receiver.to.activity.result")
+        filter.addAction(BROADCAST_MATH_RESULT)
         localReceiver = object : BroadcastReceiver() {
             override fun onReceive(context: Context?, intent: Intent?) {
                 if (intent != null) {
